@@ -32,6 +32,9 @@ jobs:
 
       - name: Gradle build
         run: ./gradlew --build-cache build
+      
+      - name: Remove watermark
+        run: zip -d ./build/libs/*.jar org/kamiblue/client/gui/hudgui/elements/client/WaterMark.class
 
       - name: Archive artifact
         uses: actions/upload-artifact@v2
